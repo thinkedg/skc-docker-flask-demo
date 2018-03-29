@@ -9,4 +9,12 @@ WORKDIR ?= /opt/flask
 
 
 build:
-	@docker build -t $(IMAGE_NAME) . --no-cache 
+	docker build -t $(IMAGE_NAME) . --no-cache
+
+run:
+	docker run -d -p 5000:5000 -v $(BASE_DIR)$(DIR)/microblog:$(WORKDIR)/microblog --name $(CONTAINER_NAME) $(IMAGE_NAME)
+
+
+
+freeze:
+	docker exec $(CONTAINER_NAME)  venv/bin/pip freeze
