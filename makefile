@@ -1,4 +1,4 @@
-.PHONY: build rundev stop restart rebuild clean
+.PHONY: build run stop restart rebuild clean
 BASE_DIR = $(dir $(shell pwd))
 DIR = $(notdir $(shell pwd))
 
