@@ -3,7 +3,7 @@ BASE_DIR = $(dir $(shell pwd))
 DIR = $(notdir $(shell pwd))
 
 CONTAINER_NAME ?= edgb
-IMAGE_NAME ?= fb
+IMAGE_NAME ?= flask-docker
 
 WORKDIR ?= /opt/flask
 
@@ -13,6 +13,7 @@ build:
 
 run:
 	docker run -d -p 5000:5000 -v $(BASE_DIR)$(DIR)/microblog:$(WORKDIR)/microblog --name $(CONTAINER_NAME) $(IMAGE_NAME)
+
 
 
 
